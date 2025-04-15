@@ -1,0 +1,14 @@
+
+<body>
+    <div class="post">
+        <form [formGroup]="userPostForm" (ngSubmit)="onSubmit()">
+
+            <h2> Add Post</h2>
+            <label> <input type="text"  formControlName="title" placeholder="Title"></label>
+            <label> <input type="number"  formControlName="userId" placeholder="User Id"></label>
+            <button type="submit" [disabled]="userPostForm.invalid">Post </button>
+        </form>
+        </div>
+    </body>
+   
+

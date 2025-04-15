@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>contactusfc</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" formControlName="firstName" placeholder="Enter your first name">
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" formControlName="lastName" placeholder="Enter your last name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" formControlName="age" placeholder="Enter your age">
+        </div>
+        
+        <button type="Submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</div>

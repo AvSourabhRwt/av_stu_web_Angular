@@ -1,0 +1,28 @@
+<div>
+ 
+  <h2>contact List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Action</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersDetail">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.age }}</td>
+        <td>
+          <button class="btn btn-primary m-2" (click)="EditcontactInfo(user.id)">Edit</button>
+          <button class="btn btn-danger m-2">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

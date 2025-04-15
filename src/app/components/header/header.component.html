@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary container-fluid p-3 position-sticky top-0 z-3">
+    <div class="d-flex justify-content-center w-100">
+        <ul class="navbar-nav d-flex gap-4 justify-content-center">
+            <li  *ngIf="checkToken()" class="nav-item border" >
+                <a class="nav-link" routerLink="/dashboard">Home</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/aboutus">About Us</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/cart">cart</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/comment">comment</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/contactus"></a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/post">post</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/todo">Todos</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/recipe">recipe</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/quote">quote</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/adduser">user</a>
+            </li>
+         
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/contactlist">contectlist</a>
+            </li>
+         
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/products">product</a>
+            </li>
+         
+            <!-- <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/addproducts">Addproduct</a>
+            </li> -->
+         
+            <!-- <li class="nav-item border" *ngIf="isLoggedIn">
+                <a class="nav-link" routerLink="/createpost"></a>
+            <li class="nav-item border" *ngIf="isLoggedIn">
+                <a class="nav-link" routerLink="/addcart"></a>
+            </li> -->
+            <li *ngIf="checkToken()" class="nav-item border" >
+               <a (click)="logout()">Logout</a>
+            </li>
+            
+        </ul>
+      
+    </div>
+</nav>

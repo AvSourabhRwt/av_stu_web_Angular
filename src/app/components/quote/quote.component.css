@@ -1,0 +1,165 @@
+/* ===== Base Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ===== Add Button Styling ===== */
+  a button {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
+  }
+  
+  a button:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  }
+  
+  /* ===== Heading ===== */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  /* ===== Table Layout ===== */
+  table {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  /* ===== Table Header ===== */
+  thead {
+    background: linear-gradient(to right, #7b1fa2, #6a1b9a);
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  
+  th {
+    padding: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  
+  /* ===== Table Body ===== */
+  td {
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    vertical-align: middle;
+  }
+  
+  /* ===== Hover Row ===== */
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* ===== Button Styling ===== */
+  button.btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(to right, #3f51b5, #8e24aa);
+  color: #fff !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #303f9f;
+  }
+  
+  .btn-danger {
+    background-color: #e53935;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c62828;
+  }
+  
+  /* ===== No Data Message ===== */
+  p {
+    text-align: center;
+    color: #999;
+    font-size: 1.3rem;
+    margin-top: 3rem;
+  }
+  
+  /* ===== Responsive Table ===== */
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    thead {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 1.2rem;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  
+    td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      font-weight: 600;
+      color: #666;
+      text-align: left;
+      width: 45%;
+    }
+  
+    td:last-child {
+      border-bottom: none;
+    }
+  
+    button.btn {
+      width: 100%;
+      margin: 6px 0;
+    }
+  }
+  

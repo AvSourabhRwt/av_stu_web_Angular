@@ -1,0 +1,27 @@
+
+<body>
+    
+<div class="form-container">
+    <h2>Add products</h2>
+   
+
+    <form [formGroup]="productForm" (ngSubmit)="SavePost()" >
+
+      <!-- <label for="id">ID</label>
+      <input type="text" id="id" placeholder="Enter your ID" /> -->
+
+      <label for="title">Title</label>
+      <input type="text" id="title"formControlName="title" placeholder="Enter title" />
+
+      <!-- <label for="description">Description</label>
+      <textarea id="description" placeholder="Write your description here..."></textarea> -->
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="footer">
+      Powered by <strong>JASHAN Systems</strong>
+    </div>
+  </div>
+</body>
+

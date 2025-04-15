@@ -1,0 +1,32 @@
+<div>
+    <a routerLink="/addproducts">
+        <button class="addbtn">ADD</button>
+      </a>
+    <h1>products List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>title</th>
+          <th>Description</th>
+          <th>Action</th>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productsResponseData">
+          <td>{{ product.id }}</td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.description }}</td>
+          <td>
+            <button class=" btn btn-primary m-2" (click)="EditproductInfo(product.id)">Edit</button>
+            <button class="btn btn-danger m-2">Delete</button>
+          </td>
+       
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  

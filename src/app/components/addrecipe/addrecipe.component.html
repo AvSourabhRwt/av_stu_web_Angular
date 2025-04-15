@@ -1,0 +1,29 @@
+<body>
+    <div class="post">
+        <form [formGroup]="AddtForm" (ngSubmit)="onSubmit()">
+
+            <h2> Add Recipe</h2>
+            <label> <input type="text"  formControlName="ingredients" ></label>
+            <label> <input type="text"  formControlName="name" ></label>
+            <button type="submit" [disabled]="AddtForm.invalid">Add </button>
+        </form>
+        </div>
+    </body>
+   
+    <!-- <body>
+        <div class="post">
+          <form [formGroup]="AddtForm" (ngSubmit)="onSubmit()">
+            <h2>Add Resipe</h2>
+      
+            <label>
+              <input type="text" formControlName="title" placeholder="Add New" />
+            </label>
+      
+            <label>
+              <input type="text" formControlName="userId" placeholder="User Id" />
+            </label>
+      
+            <button type="submit" [disabled]="AddtForm.invalid">SAVE</button>
+          </form>
+        </div>
+      </body> -->

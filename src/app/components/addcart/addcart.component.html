@@ -1,0 +1,18 @@
+<form [formGroup]="cartForm" (ngSubmit)="addCart()" class="cart-container">
+    <div class="cart-header">
+        <span>Cart</span>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="userId" placeholder="Enter your userId ">
+        <input type="text" formControlName="total" placeholder="Enter your total">
+    </div>
+    <div class="form-group">
+        <!-- <input type="number" formControlName="price" placeholder="Enter your price"> -->
+        <input type="text" formControlName="totalQuantity" placeholder="Enter your totalQuantity">
+    </div>
+    <div class="form-group">
+    </div>
+    <button class="save-btn"  type="submit" >Save</button>
+</form>
+

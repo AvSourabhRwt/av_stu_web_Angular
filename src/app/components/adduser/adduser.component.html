@@ -1,0 +1,12 @@
+<body>
+    <div class="user">
+        <form [formGroup]="UserpostForm" (ngSubmit)="onSubmit()">
+
+            <h2> Add User</h2>
+            <label> <input type="text" formControlName="id" placeholder="Fill the id"></label>
+            <label> <input type="text" formControlName="username" placeholder="Fill UserName"></label>
+            <label> <input type="email" formControlName="email" placeholder="Fill Email"></label>
+            <button type="submit" [disabled]="UserpostForm.invalid">Add</button>
+        </form>
+    </div>
+</body>

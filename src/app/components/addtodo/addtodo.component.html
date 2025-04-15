@@ -1,0 +1,16 @@
+<body>
+    <div class="post">
+        <form [formGroup]="TodoForm" (ngSubmit)="onSubmit()">
+
+            <h2> Add</h2>
+            <label> <input type="text"  formControlName="firstName" placeholder="firstName"></label>
+            <label> <input type="text"  formControlName="lastName" placeholder="lastName"></label>
+            <label> <input type="number"  formControlName="age" placeholder="age"></label>
+            <button type="submit" [disabled]="TodoForm.invalid">Post </button>
+        </form>
+        </div>
+    </body>
+   
+
+
+    userId

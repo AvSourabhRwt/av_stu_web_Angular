@@ -1,0 +1,97 @@
+<!-- 
+
+<header>
+
+  <a routerLink="/addcomment"><button>Add</button></a>
+  </header>
+    
+
+<div *ngIf="comments.length > 0; else noData">
+    <h2>Comment List</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Body</th>
+          <th>Likes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of comments">
+          <td>{{ comment.id }}</td>
+          <td>{{ comment.body }}</td>
+          <td>{{ comment.likes }}</td>
+          <td>
+            <button class="btn btn-primary m-2" (click)="EditcommentInfo(comment.id)">Edit</button>
+            <button class="btn btn-danger m-2">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <p>No comments found.</p>
+  </ng-template>
+   -->
+
+
+
+
+
+
+   
+   <header style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+    <a routerLink="/addcomment">
+      <button class="btn btn-success">Add</button>
+    </a>
+  </header>
+  
+  <div *ngIf="comments.length > 0; else noData">
+    <h2>Comment List</h2>
+    <table class="table table-bordered table-hover shadow-sm rounded">
+      <thead class="table-primary text-center">
+        <tr>
+          <th>ID</th>
+          <th>Body</th>
+          <th>Likes</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of comments" class="text-center align-middle">
+          <td>{{ comment.id }}</td>
+          <td>{{ comment.body }}</td>
+          <td>{{ comment.likes }}</td>
+          <td>
+            <button class="btn btn-primary m-2" (click)="EditcommentInfo(comment.id)">Edit</button>
+            <button class="btn btn-danger m-2" (click)="dleteInfo(comment.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <p class="text-muted text-center fs-5">No comments found.</p>
+  </ng-template>
+  
+
+  
+<div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="fs-5">Are you sure you want to delete this item?</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCmt()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

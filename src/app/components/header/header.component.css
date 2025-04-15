@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #4a90e2; /* Modern blue */
+    border-bottom: 2px solid #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand:hover {
+    color: #ff8c00; /* Subtle orange hover effect */
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-item {
+    list-style: none;
+    border-radius: 20px;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #ff0011; /* Vibrant orange color */
+    color: white;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-item:hover {
+    background-color: rgba(255, 140, 0, 0.2); /* Soft hover effect */
+    border-radius: 10px;
+}
+
+.navbar-nav .nav-item:focus-within .nav-link {
+    background: linear-gradient(to right, #3f51b5, #8e24aa);
+    color: white;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+/* Smooth Hover Transition */
+.nav-item:hover .nav-link {
+    transform: scale(1.05);
+}
+
+/* Add padding to the body below the sticky navbar */
+body {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Logout link customization */
+.nav-item a {
+    font-weight: bold;
+    color:  #8e24aa;
+    text-transform: uppercase;
+}
+
+.nav-item a:hover {
+    background: linear-gradient(to right, #3f51b5, #8e24aa);
+    color: white;
+}
+
+/* Curved Nav Item Styling */
+.nav-item {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 140, 0, 0.2);
+    border-radius: 15px;
+}
+
+/* Dropdown (optional, if used in your navbar) */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}

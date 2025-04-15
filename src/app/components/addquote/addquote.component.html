@@ -1,0 +1,33 @@
+<body>
+
+    <div class="form-container">
+      <h2>Add Quote</h2>
+      <p>Please fill in the form below to submit your message.</p>
+  
+     <form [formGroup]="QuoteForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="userId">User ID</label>
+          <input type="text" id="userId" name="userId" formControlName="userId" placeholder="Enter your ID" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="userName">Language</label>
+          <input type="text" id="userName" name="tags" formControlName="tags" placeholder="" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="text">Tags</label>
+          <textarea id="message" name="body" formControlName="body" placeholder="Write  here..." required></textarea>
+        </div>
+  
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+  
+      <div class="footer">
+        Powered by <strong>JASHAN Systems</strong>
+      </div>
+    </div>
+  
+  </body>
