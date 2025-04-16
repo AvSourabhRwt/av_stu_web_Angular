@@ -1,54 +1,14 @@
-<!-- 
+<section class="container-fluid mt-4">
 
-<header>
+  <div class="table-container">
 
-  <a routerLink="/addcomment"><button>Add</button></a>
-  </header>
-    
-
-<div *ngIf="comments.length > 0; else noData">
-    <h2>Comment List</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Body</th>
-          <th>Likes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let comment of comments">
-          <td>{{ comment.id }}</td>
-          <td>{{ comment.body }}</td>
-          <td>{{ comment.likes }}</td>
-          <td>
-            <button class="btn btn-primary m-2" (click)="EditcommentInfo(comment.id)">Edit</button>
-            <button class="btn btn-danger m-2">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-  <ng-template #noData>
-    <p>No comments found.</p>
-  </ng-template>
-   -->
-
-
-
-
-
-
-   
-   <header style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-    <a routerLink="/addcomment">
-      <button class="btn btn-success">Add</button>
-    </a>
-  </header>
-  
-  <div *ngIf="comments.length > 0; else noData">
-    <h2>Comment List</h2>
+    <div *ngIf="comments.length > 0; else noData">
+      <div style="display: flex; justify-content:space-between;  align-items: center;">
+      <h3>Comment List</h3>
+      <a routerLink="/addcomment">
+        <button class="btn btn-success">Add</button>
+      </a>
+    </div>
     <table class="table table-bordered table-hover shadow-sm rounded">
       <thead class="table-primary text-center">
         <tr>
@@ -77,6 +37,8 @@
   </ng-template>
   
 
+    </div>
+</section>
   
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">

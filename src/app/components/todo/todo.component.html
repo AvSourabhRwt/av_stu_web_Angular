@@ -1,43 +1,49 @@
-<header>
-<a routerLink="/addtodo"><button>Add</button></a>
+<section class="container-fluid mt-4">
 
-</header>
+  <div class="table-container">
 
-<div *ngIf="todos.length > 0; else noData">
-    <h2>Todo List</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>UserId</th>
-          <th>Completed</th>
-          <th>Action</th>
+    <div style="display: flex; justify-content:space-between;  align-items: center;">
+      <h3 class="text-center">Todo List</h3>
+      <a routerLink="/addtodo"><button class="btn btn-success">Add</button></a>
+    </div>
 
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let todo of todos">
-          <td>{{ todo.id }}</td>
-          <td>{{ todo.userId }}</td>
-          <td>{{ todo.completed }}</td>
-          <td>
-            <button class="btn btn-primary m-2" (click)="EdittodoInfo(todo.id)">Edit</button>
-            <button class="btn btn-danger m-2" (click)="dleteInfo(todo.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
-        </td>
-        </tr>
-      </tbody>
-    </table>
+    <div *ngIf="todos.length > 0; else noData">
+      <table class="border">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>UserId</th>
+            <th>Completed</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let todo of todos">
+            <td>{{ todo.id }}</td>
+            <td>{{ todo.userId }}</td>
+            <td>{{ todo.completed }}</td>
+            <td>
+              <button class="btn btn-primary m-2" (click)="EdittodoInfo(todo.id)">Edit</button>
+              <button class="btn btn-danger m-2" (click)="dleteInfo(todo.id)" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noData>
+      <p>No todos found.</p>
+    </ng-template>
+
+
   </div>
-  
-  <ng-template #noData>
-    <p>No todos found.</p>
-  </ng-template>
+</section>
 
 
 
 
-
-  
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content shadow-lg border-0">
@@ -55,4 +61,3 @@
     </div>
   </div>
 </div>
-  

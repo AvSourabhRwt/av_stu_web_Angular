@@ -1,44 +1,16 @@
-<!-- <div *ngIf="posts.length > 0; else noData">
+<section class="container-fluid mt-4">
 
-  <header>
-      <a routerLink="/createpost"> <button>Post</button></a>
-  </header>
-  <h2>Post List</h2>
-  <table border ="1">
-    <head>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Boby</th>
-      </tr>
-    </head>
-    <body>
-      <tr *ngFor="let post of posts">
-        <td>{{ post.id }}</td>
-        <td>{{ post.title }}</td>
-        <td>{{ post.body }}</td>
-       <td> <button class="btn btn-primary m-2" (click)="EditUserInfo(user)">Edit</button>
-        
-                        
-        <button class="btn btn-danger m-2">Delete</button>
-        </td>
-      </tr>
-    </body>
-  </table>
-</div>
+  <div class="table-container">
 
-<ng-template #noData>
-  <p>No posts found.</p>
-</ng-template> -->
-
-<div *ngIf="posts.length > 0; else noData">
-  <header>
-    <a routerLink="/createpost">
-      <button>Post</button>
-    </a>
-  </header>
-  <h2>Post List</h2>
-  <table border="1">
+    <div *ngIf="posts.length > 0; else noData">
+    <div style="display: flex; justify-content:space-between;  align-items: center;">
+      <h3 class="text-center">Post List</h3>
+      <a routerLink="/createpost">
+        <button class="btn btn-success">Post</button>
+      </a>
+    </div>
+    
+  <table class="border">
     <thead>
       <tr>
         <th>ID</th>
@@ -66,6 +38,8 @@
 </ng-template>
 
 
+</div>
+</section>
 
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">

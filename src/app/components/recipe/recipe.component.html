@@ -1,36 +1,41 @@
+<section class="container-fluid mt-4">
+ 
+  <div class="table-container">
+    <div style="display: flex; justify-content:space-between;  align-items: center;">
+      <h2>Recipe List</h2>
+    <a routerLink='/addrecipe'><button>Add</button></a>
+  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>ingredients</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td>{{ recipe.id }}</td>
+          <td>{{ recipe.name }}</td>
+          <td>{{ recipe.ingredients }}</td>
 
-<a routerLink='/addrecipe'><button>Add</button></a>
+          <td> <button class="btn btn-primary m-2" (click)="EditresipeInfo(recipe.id)">Edit</button>
+            <button class="btn btn-danger m-2" (click)="dleterecipe(recipe.id)" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Delete</button>
+          </td>
 
-<div *ngIf="recipes.length > 0; else noData">
-  <h2>Recipe List</h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>ingredients</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let recipe of recipes">
-        <td>{{ recipe.id }}</td>
-        <td>{{ recipe.name }}</td>
-        <td>{{ recipe.ingredients }}</td>
-        
-       <td> <button class="btn btn-primary m-2" (click)="EditresipeInfo(recipe.id)">Edit</button>
-        <button class="btn btn-danger m-2" (click)="dleterecipe(recipe.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
-      </td>
 
-      
-      </tr>
-    </tbody>
-  </table>
-</div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<ng-template #noData>
-  <p>No recipes found.</p>
-</ng-template>
+  <ng-template #noData>
+    <p>No recipes found.</p>
+  </ng-template>
 
+</section>
 
 
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,6 +55,3 @@
     </div>
   </div>
 </div>
-
-
-

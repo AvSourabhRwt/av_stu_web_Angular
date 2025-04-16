@@ -2,7 +2,10 @@
     <div class="d-flex justify-content-center w-100">
         <ul class="navbar-nav d-flex gap-4 justify-content-center">
             <li  *ngIf="checkToken()" class="nav-item border" >
-                <a class="nav-link" routerLink="/dashboard">Home</a>
+                <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li  *ngIf="checkToken()" class="nav-item border" >
+                <a class="nav-link" routerLink="/dashboard">User</a>
             </li>
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/aboutus">About Us</a>
@@ -12,9 +15,6 @@
             </li>
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/comment">comment</a>
-            </li>
-            <li  *ngIf="checkToken()" class="nav-item border">
-                <a class="nav-link" routerLink="/contactus"></a>
             </li>
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/post">post</a>
@@ -28,10 +28,6 @@
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/quote">quote</a>
             </li>
-            <li  *ngIf="checkToken()" class="nav-item border">
-                <a class="nav-link" routerLink="/adduser">user</a>
-            </li>
-         
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/contactlist">contectlist</a>
             </li>
@@ -50,7 +46,7 @@
                 <a class="nav-link" routerLink="/addcart"></a>
             </li> -->
             <li *ngIf="checkToken()" class="nav-item border" >
-               <a (click)="logout()">Logout</a>
+               <a class="nav-link" (click)="logout()">Logout</a>
             </li>
             
         </ul>

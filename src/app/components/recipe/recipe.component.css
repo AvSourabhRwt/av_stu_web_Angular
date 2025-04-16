@@ -29,14 +29,19 @@ a button {
   
   /* ==== Table Styling ==== */
   table {
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     margin: auto;
-    max-width: 95%;
+  }
+
+  .table-container{
+    width: 60% !important;
+    justify-content: center;
+    margin: auto;
   }
   
   thead {

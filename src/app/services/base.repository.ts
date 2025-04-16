@@ -14,8 +14,6 @@ export class BaseRepository {
   constructor(private http: HttpClient, private router: Router, private jwtHelper: JwtHelperService) {}
 
 
-
-
   saveToken(token: string) {
     localStorage.setItem('access_token', token);
   }

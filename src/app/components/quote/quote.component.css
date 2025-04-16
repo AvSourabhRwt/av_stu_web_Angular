@@ -1,10 +1,5 @@
 /* ===== Base Reset ===== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+
   
   /* ===== Add Button Styling ===== */
   a button {
@@ -37,8 +32,7 @@
   
   /* ===== Table Layout ===== */
   table {
-    width: 100%;
-    max-width: 1100px;
+
     margin: 0 auto 3rem auto;
     border-collapse: collapse;
     background: white;
@@ -115,6 +109,13 @@
     font-size: 1.3rem;
     margin-top: 3rem;
   }
+
+  
+.table-container{
+  width: 60% !important;
+  justify-content: center;
+  margin: auto;
+}
   
   /* ===== Responsive Table ===== */
   @media (max-width: 768px) {

@@ -1,39 +1,47 @@
-<a routerLink="/addquote" > <button>Add</button></a>
-<div *ngIf="quotes.length > 0; else noData">
-    <h2>Quote List</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Author</th>
-          <th>Message</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let quote of quotes">
-          <td>{{ quote.id }}</td>
-          <td>{{ quote.name }}</td>
-          <td>{{ quote.author }}</td>
-          <td>{{ quote.quote }}</td>
-          <td>
-            <button class="btn btn-primary m-2" (click)="EditquoteInfo(quote.id)">Edit</button>
-            <button class="btn btn-danger m-2" (click)="dletequote(quote.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-  <ng-template #noData>
-    <p>No quotes found.</p>
-  </ng-template>
-  
-
+<section class="container-fluid mt-4">
 
   
+    <div *ngIf="quotes.length > 0; else noData " class="table-container">
+      <div style="display: flex; justify-content:space-between;  align-items: center;">
+        <h3>Quote List</h3>
+        <a routerLink="/addquote"> <button>Add</button></a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Message</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of quotes">
+            <td>{{ quote.id }}</td>
+            <td>{{ quote.name }}</td>
+            <td>{{ quote.author }}</td>
+            <td>{{ quote.quote }}</td>
+            <td>
+              <button class="btn btn-primary m-2" (click)="EditquoteInfo(quote.id)">Edit</button>
+              <button class="btn btn-danger m-2" (click)="dletequote(quote.id)" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  
+    <ng-template #noData>
+      <p>No quotes found.</p>
+    </ng-template>
+
+</section>
+
+
+
+
+
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content shadow-lg border-0">

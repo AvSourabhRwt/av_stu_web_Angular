@@ -13,12 +13,17 @@
     margin: 1.5rem 0;
     color: #2e2e2e;
   }
+
+  .table-container{
+    width: 60% !important;
+    justify-content: center;
+    margin: auto;
+  }
   
   /* ===== Table Styling ===== */
   table {
-    width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
     background-color: #ffffff;
     border-collapse: collapse;
     border-radius: 12px;

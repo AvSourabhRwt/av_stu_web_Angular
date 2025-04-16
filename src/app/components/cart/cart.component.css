@@ -14,6 +14,11 @@
   align-items: center;
   margin-bottom: 25px;
 }
+.table-container{
+  width: 60% !important;
+  justify-content: center;
+  margin: auto;
+}
 
 /* Title */
 .top-bar h2 {
@@ -42,16 +47,10 @@
   opacity: 0.95;
 }
 
-/* Table */
-.table-container {
-  overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Table structure */
 table {
-  width: 100%;
   border-collapse: collapse;
   background-color: white;
   border-radius: 12px;

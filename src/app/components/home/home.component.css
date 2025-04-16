@@ -40,11 +40,10 @@
   color: #333;
 }
 
-/* Table Container */
-.table-container {
-  overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+.table-container{
+  width: 60% !important;
+  justify-content: center;
+  margin: auto;
 }
 
 /* Table */
@@ -60,6 +59,10 @@ table {
 thead {
   background: linear-gradient(to right, #3f51b5, #8e24aa);
   color: white;
+}
+
+.text-size{
+  font-size: 20px;
 }
 
 thead th {
