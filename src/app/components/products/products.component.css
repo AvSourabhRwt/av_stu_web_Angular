@@ -45,7 +45,11 @@
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
-  
+  .table-container{
+    width: 60% !important;
+    justify-content: center;
+    margin: auto;
+  }
   /* Table Header */
   thead {
     background: linear-gradient(to right, #3f51b5, #8e24aa);
