@@ -22,6 +22,7 @@ import { ContactlistComponent } from './components/contactlist/contactlist.compo
 import { ProductsComponent } from './components/products/products.component';
 import { AddproductsComponent } from './components/addproducts/addproducts.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 
 
 
@@ -51,6 +52,7 @@ export const routes: Routes = [
     {path: 'addproducts', component: AddproductsComponent},
     {path: 'addstudent', component: AddstudentComponent},
    
+    {path: 'calculator', component: CalculatorComponent}
  
 
     

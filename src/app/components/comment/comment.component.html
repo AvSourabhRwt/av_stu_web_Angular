@@ -31,6 +31,31 @@
       </tbody>
     </table>
   </div>
+
+    <button (click)="CustomColorDiv('Red')">Red</button>
+    <button (click)="CustomColorDiv('Blue')">Blue</button>
+    <button (click)="CustomColorDiv('Black')">Black</button>
+    <button (click)="CustomColorDiv('Green')">Green</button>
+    <button (click)="CustomColorDiv('')">Default</button>
+
+  <div [ngSwitch]="CustomColorDiv">
+    <div *ngSwitchCase="'Red'">
+      <h1>Red</h1>
+    </div>
+    <div *ngSwitchCase="'Blue'">
+      <h1>Blue</h1>
+    </div>
+    <div *ngSwitchCase="'Black'">
+      <h1>Black</h1>
+    </div>
+    <div *ngSwitchCase="'Green'">
+      <h1>Green</h1>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>Yellow</h1>
+    </div>
+
+  </div>
   
   <ng-template #noData>
     <p class="text-muted text-center fs-5">No comments found.</p>
@@ -38,6 +63,33 @@
   
 
     </div>
+       
+  <section>
+    <button (click)="CustomColorDiv('red')">red</button>
+    <button (click)="CustomColorDiv('blue')">blue</button>
+    <button (click)="CustomColorDiv('green')">green</button>
+    <button (click)="CustomColorDiv('black')">black</button>
+    <button (click)="CustomColorDiv('defalut')">defalut</button>
+    <div [ngSwitch]="showColor">
+      <div *ngSwitchCase="'red'">
+      <h1>Red</h1>
+    </div>
+    <div *ngSwitchCase="'blue'">
+      <h1>blue</h1>
+    </div>
+    <div *ngSwitchCase="'green'">
+      <h1>green</h1>
+    </div>
+    <div *ngSwitchCase="'black'">
+      <h1>black</h1>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>orange</h1>
+    </div>
+  </div>
+</section>  
+
+   
 </section>
   
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

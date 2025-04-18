@@ -147,3 +147,9 @@ body {
     visibility: hidden;
     transform: translateY(-10px);
 }
+.Red{
+    color: red;
+}
+.Green{
+    color: green;
+}

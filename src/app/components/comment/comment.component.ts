@@ -19,7 +19,7 @@ export class CommentComponent implements OnInit {
   commentDetail: any;
   commentResponseData: any;
   rocsID: Number = 0;
-
+  showColor:string | undefined;
   commentId: any;
   comment: any;
 
@@ -42,12 +42,11 @@ export class CommentComponent implements OnInit {
   getComments(): void {
     this.baseRepository.request<any[]>('comments', 'GET').subscribe({
       next: (data) => {
-        debugger;
         this.commentResponseData = data; // Bind data to the property
         console.log('Comments fetched:',);
         this.comments = this.commentResponseData.comments;
       },
-     
+
     });
   }
 
@@ -85,19 +84,16 @@ export class CommentComponent implements OnInit {
     }
   }
   deleteCmt() {
-    this.baseRepository.request(`comments ${this.rocsID}`, `DELETE`) .subscribe ({
+    this.baseRepository.request(`comments ${this.rocsID}`, `DELETE`).subscribe({
       next: (data: any) => {
         console.log(data);
         alert('delete suceess')
-
-
       },
-
-
     });
-
-
   }
 
+  CustomColorDiv(divCol:string){
+    this.showColor = divCol;
+  }
 
 }
