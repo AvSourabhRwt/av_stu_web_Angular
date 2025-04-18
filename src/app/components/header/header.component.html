@@ -36,6 +36,11 @@
                 <a class="nav-link" routerLink="/products">product</a>
             </li>
          
+         
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/addstudent">AddStudent</a>
+            </li>
+         
             <!-- <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/addproducts">Addproduct</a>
             </li> -->
