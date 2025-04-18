@@ -3,9 +3,9 @@
         <div [ngClass]="isClass ? 'Red' : 'Green'">Hello World</div>
         <button (click)="toggle()">Boom</button>
         <ul class="navbar-nav d-flex gap-4 justify-content-center">
-            <li   class="nav-item border" >
+            <!-- <li  *ngIf="checkToken()" class="nav-item border" >
                 <a class="nav-link" routerLink="/dashboard">Dashboard</a>
-            </li>
+            </li> -->
             <li  *ngIf="checkToken()" class="nav-item border" >
                 <a class="nav-link" routerLink="/dashboard">Home</a>
             </li>
