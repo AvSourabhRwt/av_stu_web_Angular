@@ -38,7 +38,7 @@
     <button (click)="CustomColorDiv('Green')">Green</button>
     <button (click)="CustomColorDiv('')">Default</button>
 
-  <div [ngSwitch]="customColor">
+  <div [ngSwitch]="CustomColorDiv">
     <div *ngSwitchCase="'Red'">
       <h1>Red</h1>
     </div>
