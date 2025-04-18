@@ -1,0 +1,26 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            add data
+        </div>
+        <div class="col-6">
+            <h1>Calculator</h1>
+            <div class="row">
+                <form [formGroup]="calculatorForm">
+                    <div class="row gap-4">
+                        <input class="col-3" formControlName="firstValue" type="number" placeholder="Enter first value"/>
+                        <input class="col-3" formControlName="secondValue" type="number" placeholder="Enter second value"/>
+                    </div>
+                    <div class="gap-5 mt-4">Result<input class="border" formControlName="resultData" placeholder="result"/><button type="button" (click)="clearInputs()">Clear</button>
+                    </div>
+                    <div class="row mt-5">
+                        <button  type="submit" (click)="calculate('addition')">+</button>
+                        <button type="submit" (click)="calculate('minus')">-</button>
+                        <button type="submit" (click)="calculate('multiply')">*</button>
+                        <button type="submit" (click)="calculate('divide')">/</button>
+                    </div>
+                </form>
+                </div>
+        </div>
+    </div>
+</section>

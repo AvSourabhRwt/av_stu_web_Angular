@@ -16,7 +16,7 @@ export class HomeComponent {
   users: any[] = [];
   userDetail: any;
   userResponseData: any;
- 
+  updateclass:boolean=true; 
   modalInstance: any;
   indexID: Number=0;
 
@@ -89,8 +89,20 @@ export class HomeComponent {
     
     
       }
+ 
+      
+      toggleClass(){
+        // if(this.updateclass == true){
+        //   this.updateclass = false;
+        // }else{
+        //   this.updateclass = true;
+        // }
+
+        // this.updateclass == true ? this.updateclass= false : this.updateclass = true;
+
+        this.updateclass = !this.updateclass;
+      }
     
-    
-    }
+}
     
   

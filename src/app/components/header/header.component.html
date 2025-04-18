@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary container-fluid p-3 position-sticky top-0 z-3">
+<nav   *ngIf="checkToken()" class="navbar navbar-expand-lg bg-body-tertiary container-fluid p-3 position-sticky top-0 z-3">
     <div class="d-flex justify-content-center w-100">
         <ul class="navbar-nav d-flex gap-4 justify-content-center">
             <li  *ngIf="checkToken()" class="nav-item border" >
-                <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                <a class="nav-link" routerLink="/dashboard">Home</a>
             </li>
             <li  *ngIf="checkToken()" class="nav-item border" >
-                <a class="nav-link" routerLink="/dashboard">User</a>
+                <a class="nav-link" routerLink="/home">User</a>
             </li>
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/aboutus">About Us</a>
@@ -35,7 +35,9 @@
             <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/products">product</a>
             </li>
-         
+            <li  *ngIf="checkToken()" class="nav-item border">
+                <a class="nav-link" routerLink="/calculator">calculator</a>
+            </li>
             <!-- <li  *ngIf="checkToken()" class="nav-item border">
                 <a class="nav-link" routerLink="/addproducts">Addproduct</a>
             </li> -->

@@ -38,6 +38,33 @@
   
 
     </div>
+       
+  <section>
+    <button (click)="CustomColorDiv('red')">red</button>
+    <button (click)="CustomColorDiv('blue')">blue</button>
+    <button (click)="CustomColorDiv('green')">green</button>
+    <button (click)="CustomColorDiv('black')">black</button>
+    <button (click)="CustomColorDiv('defalut')">defalut</button>
+    <div [ngSwitch]="showColor">
+      <div *ngSwitchCase="'red'">
+      <h1>Red</h1>
+    </div>
+    <div *ngSwitchCase="'blue'">
+      <h1>blue</h1>
+    </div>
+    <div *ngSwitchCase="'green'">
+      <h1>green</h1>
+    </div>
+    <div *ngSwitchCase="'black'">
+      <h1>black</h1>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>orange</h1>
+    </div>
+  </div>
+</section>  
+
+   
 </section>
   
 <div id="exampleModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
