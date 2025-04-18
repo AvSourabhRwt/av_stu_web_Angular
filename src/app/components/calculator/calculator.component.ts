@@ -33,6 +33,14 @@ export class CalculatorComponent {
 
   }
 
+  deleteData(data:string){
+    const index = this.students.indexOf(data);
+    if (index !== -1) {
+      this.students.splice(index, 1); 
+    }
+    console.log(data)
+  }
+
   calculate(checkType:string){
     this.firstdata = this.calculatorForm.value.firstValue;
     this.secondData = this.calculatorForm.value.secondValue;
@@ -56,6 +64,7 @@ export class CalculatorComponent {
     this.itemValue = this.itemForm.value.addItem,
     this.students.push(this.itemValue);
     console.log(this.students)
+    this.clearItemForm()
   }
 
   clearInputsCalculator(){
@@ -63,6 +72,11 @@ export class CalculatorComponent {
     this.firstdata = 0;
     this.secondData = 0;
     this.finalResult = 0;
+  }
+
+  clearItemForm(){
+    this.itemForm.reset();
+    this.itemValue = '';
   }
 
 }

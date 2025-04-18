@@ -1,26 +1,29 @@
 <section class="container-fluid">
     <div class="row">
         <div class="col-6">
-            <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
-                <div class="row mt-5">
-                    <input class="col-5" formControlName="addItem" placeholder="Enter item name" type="text"/>
-                    <button class="col-3" type="submit">Add Item</button>
+            <div class="add-item">
+                <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
+                    <h1>Student</h1>
+                    <div class="row mt-5">
+                        <input class="col-5" formControlName="addItem" placeholder="Enter item name" type="text"/>
+                        <button class="col-3" type="submit">Add Item</button>
+                    </div>
+                </form>
+                <div  *ngIf="students.length>0; else noData"class="mt-5">
+                    <h3>Student</h3>
+                    <ul  class="mt-3">
+                        <li *ngFor="let item of students">{{item}} <button class="ml-4" (click)="deleteData(item)">X</button> </li>
+                    </ul>
                 </div>
-            </form>
-            <div  *ngIf="students.length>0; else noData"class="mt-5">
-                <h3>Student</h3>
-                <ul  class="mt-3">
-                    <li *ngFor="let item of students">{{item}} <button >X</button> </li>
-                </ul>
             </div>
-            <ng-template #noData>
+                <ng-template #noData>
                 <p class="mt-5">No student found</p>
             </ng-template>
                 
         </div>
         <div class="col-6">
             <h1>Calculator</h1>
-            <div class="row">
+            <div class="row mt-5">
                 <form [formGroup]="calculatorForm">
                     <div class="row gap-4">
                         <input class="col-3" formControlName="firstValue" type="number" placeholder="Enter first value"/>
