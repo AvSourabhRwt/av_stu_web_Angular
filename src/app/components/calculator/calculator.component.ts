@@ -2,17 +2,21 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { BaseRepository } from './../../services/base.repository';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-calculator',
-  imports: [RouterModule,ReactiveFormsModule],
+  imports: [RouterModule,ReactiveFormsModule,CommonModule],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
-
+  itemForm!: FormGroup;
   calculatorForm!: FormGroup;
   finalResult = 0;
+  itemValue:string ='' ;
+  students:any = [];
   firstdata=0;
   secondData=0;
 
@@ -23,6 +27,9 @@ export class CalculatorComponent {
     resultData: new FormControl('',[Validators.required]),
   })
 
+  this.itemForm = new FormGroup({
+    addItem : new FormControl('',[Validators.required]),
+  })
 
   }
 
@@ -41,14 +48,21 @@ export class CalculatorComponent {
     }
     this.calculatorForm.patchValue({
       resultData: this.finalResult,
-
-
     });
 
   }
 
-  clearInputs(){
+  saveItem(){
+    this.itemValue = this.itemForm.value.addItem,
+    this.students.push(this.itemValue);
+    console.log(this.students)
+  }
 
+  clearInputsCalculator(){
+    this.calculatorForm.reset();
+    this.firstdata = 0;
+    this.secondData = 0;
+    this.finalResult = 0;
   }
 
 }
