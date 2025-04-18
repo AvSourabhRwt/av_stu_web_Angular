@@ -22,6 +22,7 @@ import { ContactlistComponent } from './components/contactlist/contactlist.compo
 import { ProductsComponent } from './components/products/products.component';
 import { AddproductsComponent } from './components/addproducts/addproducts.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 
 
 

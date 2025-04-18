@@ -46,7 +46,7 @@ export class CommentComponent implements OnInit {
         console.log('Comments fetched:',);
         this.comments = this.commentResponseData.comments;
       },
-     
+
     });
   }
 
@@ -84,7 +84,7 @@ export class CommentComponent implements OnInit {
     }
   }
   deleteCmt() {
-    this.baseRepository.request(`comments ${this.rocsID}`, `DELETE`) .subscribe ({
+    this.baseRepository.request(`comments ${this.rocsID}`, `DELETE`).subscribe({
       next: (data: any) => {
         console.log(data);
         alert('delete suceess')

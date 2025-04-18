@@ -31,6 +31,31 @@
       </tbody>
     </table>
   </div>
+
+    <button (click)="CustomColorDiv('Red')">Red</button>
+    <button (click)="CustomColorDiv('Blue')">Blue</button>
+    <button (click)="CustomColorDiv('Black')">Black</button>
+    <button (click)="CustomColorDiv('Green')">Green</button>
+    <button (click)="CustomColorDiv('')">Default</button>
+
+  <div [ngSwitch]="customColor">
+    <div *ngSwitchCase="'Red'">
+      <h1>Red</h1>
+    </div>
+    <div *ngSwitchCase="'Blue'">
+      <h1>Blue</h1>
+    </div>
+    <div *ngSwitchCase="'Black'">
+      <h1>Black</h1>
+    </div>
+    <div *ngSwitchCase="'Green'">
+      <h1>Green</h1>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>Yellow</h1>
+    </div>
+
+  </div>
   
   <ng-template #noData>
     <p class="text-muted text-center fs-5">No comments found.</p>
