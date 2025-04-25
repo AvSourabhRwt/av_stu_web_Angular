@@ -118,9 +118,3 @@ tbody tr:nth-child(even) {
   margin-top: 40px;
 }
 
-.red-color{
-  background-color: red !important;
-}
-.green-color{
-  background-color: green !important;
-}
