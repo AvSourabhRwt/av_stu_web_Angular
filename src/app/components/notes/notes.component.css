@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-wrapper {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .heading h2 {
+    color: red;
+    font-size: 24px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .underline {
+    width: 50px;
+    height: 3px;
+    background-color: red;
+    margin: 10px auto 0;
+  }
+  
+  .contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .form-section, .info-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 350px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  form input, form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  form textarea {
+    min-height: 80px;
+  }
+  
+  form button {
+    margin-top: 20px;
+    background-color: #ed0000;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #c80000;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+  
+  .info-icon {
+    background-color: #ffe5e5;
+    color: red;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 12px;
+    margin-right: 15px;
+  }
+  
+  .info-section strong {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .info-section p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .info-section a {
+    color: red;
+    text-decoration: underline;
+  }
+  

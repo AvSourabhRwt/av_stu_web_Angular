@@ -10,7 +10,7 @@
             <div  *ngIf="students.length>0; else noData"class="mt-5">
                 <h3>Student</h3>
                 <ul  class="mt-3">
-                    <li *ngFor="let item of students">{{item}} <button >X</button> </li>
+                    <li *ngFor="let item of students">{{item}} <button (click)="DeletStudent(item)">X</button> </li>
                 </ul>
             </div>
             <ng-template #noData>
@@ -39,3 +39,23 @@
         </div>
     </div>
 </section>
+
+
+
+<div>
+    <form [formGroup]="addForm" (ngSubmit)="addItems()">
+
+        <input formControlName="addname" type ="text"><button type="submit">save </button>
+        <ul  class="mt-3">
+            <li *ngFor="let name of studentss">{{name}}  </li>
+        </ul>
+  
+  
+  
+  
+  
+    </form>
+
+
+
+</div>

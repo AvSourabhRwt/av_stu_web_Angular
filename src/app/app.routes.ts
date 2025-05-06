@@ -23,6 +23,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { AddproductsComponent } from './components/addproducts/addproducts.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -49,6 +50,7 @@ export const routes: Routes = [
     {path: 'adduser', component: AdduserComponent},
     {path: 'contactlist', component: ContactlistComponent},
     {path: 'products', component: ProductsComponent},
+    {path: 'notes', component: NotesComponent},
     {path: 'addproducts', component: AddproductsComponent},
     {path: 'addstudent', component: AddstudentComponent},
    
