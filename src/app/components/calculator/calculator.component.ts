@@ -45,7 +45,15 @@ export class CalculatorComponent {
 
   }
 
-  calculate(checkType: string) {
+  deleteData(data:string){
+    const index = this.students.indexOf(data);
+    if (index !== -1) {
+      this.students.splice(index, 1); 
+    }
+    console.log(data)
+  }
+
+  calculate(checkType:string){
     this.firstdata = this.calculatorForm.value.firstValue;
     this.secondData = this.calculatorForm.value.secondValue;
 
@@ -68,6 +76,7 @@ export class CalculatorComponent {
     this.itemValue = this.itemForm.value.addItem,
       this.students.push(this.itemValue);
     console.log(this.students)
+    this.clearItemForm()
   }
   DeletStudent(indexdata: string) {
     debugger
@@ -85,11 +94,9 @@ export class CalculatorComponent {
     this.finalResult = 0;
   }
 
-  addItems() {
-    this.addvalue = this.addForm.value.addname,
-      this.studentss.push(this.addvalue);
-    console.log(this.studentss)
-
+  clearItemForm(){
+    this.itemForm.reset();
+    this.itemValue = '';
   }
 
 }

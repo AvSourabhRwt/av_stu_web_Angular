@@ -16,7 +16,7 @@
 
 
    <!-- login.component.html -->
-<div class="login-container">
+<!-- <div class="login-container">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h2>Login</h2>
     
@@ -33,5 +33,37 @@
     </div>
     
     <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div> -->
+
+
+
+
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 class="welcome-heading">WELCOME</h2>
+    <p class="description">
+     welcome to my world
+    </p>
+
+    <div class="input-group">
+      <i class="icon user-icon"></i>
+      <input type="text" id="UserName" formControlName="UserName" placeholder="Username" />
+    </div>
+
+    <div class="input-group">
+      <i class="icon lock-icon"></i>
+      <input type="password" id="Password" formControlName="Password" placeholder="Password" />
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid" class="login-button">LOGIN</button>
+
+    <div class="extras">
+      <a href="#" class="red">Forgot Password?</a>
+      <div class="bottom-links">
+        <span>Remember</span>
+        <a href="#" class="red">Create Account</a>
+      </div>
+    </div>
   </form>
 </div>
