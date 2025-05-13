@@ -44,3 +44,10 @@
     </div>
     </div>
 </section>
+
+
+<div>
+    <form [formGroup]="newItem" (ngSubmit)="addsave()">
+    <input formControlName = "newItem" type="text"><button>save</button>
+    </form>
+</div>

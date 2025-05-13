@@ -12,10 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
+
+saveadd() {
+throw new Error('Method not implemented.');
+}
   itemForm!: FormGroup;
   calculatorForm!: FormGroup;
+  newItem !:FormGroup
   finalResult = 0;
   itemValue:string ='' ;
+  addValue:string='';
   students:any = [];
   firstdata=0;
   secondData=0;
@@ -29,6 +35,11 @@ export class CalculatorComponent {
 
   this.itemForm = new FormGroup({
     addItem : new FormControl('',[Validators.required]),
+  })
+
+  this.newItem= new FormGroup({
+    newItem:new FormControl('',[Validators.required])
+
   })
 
   }
@@ -59,6 +70,11 @@ export class CalculatorComponent {
     });
 
   }
+  addsave(){
+    this.addValue=this.newItem.value.newItem
+
+  }
+  
 
   saveItem(){
     this.itemValue = this.itemForm.value.addItem,
@@ -80,3 +96,4 @@ export class CalculatorComponent {
   }
 
 }
+
