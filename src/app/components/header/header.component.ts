@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
 
   isLoggedIn: boolean = false;
-  
+  isClass: boolean = true;
   constructor(private _baseRepository: BaseRepository, private router: Router) {
     // this.isLoggedIn = this._baseRepository.isLoggedIn();
   }
@@ -31,7 +31,10 @@ export class HeaderComponent {
     this._baseRepository.logout();
     this.router.navigate(['/login']);
   }
+  toggle() {
+    this.isClass ? this.isClass = false : this.isClass=true
 
+  }
 
 
 }

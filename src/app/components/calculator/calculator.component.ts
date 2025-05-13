@@ -7,41 +7,40 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-calculator',
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule,ReactiveFormsModule,CommonModule],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
+
+saveadd() {
+throw new Error('Method not implemented.');
+}
   itemForm!: FormGroup;
   calculatorForm!: FormGroup;
-  addForm!: FormGroup;
+  newItem !:FormGroup
   finalResult = 0;
-  itemValue: string = '';
-  addvalue: string = '';
-  students: any = [];
-  firstdata = 0;
-  secondData = 0;
-  studentss: any = [];
-  name:any;
+  itemValue:string ='' ;
+  addValue:string='';
+  students:any = [];
+  firstdata=0;
+  secondData=0;
 
+  constructor(private baseRepository:BaseRepository){
+  this.calculatorForm = new FormGroup({
+    firstValue : new FormControl('',[Validators.required]),
+    secondValue : new FormControl('',[Validators.required]),
+    resultData: new FormControl('',[Validators.required]),
+  })
 
+  this.itemForm = new FormGroup({
+    addItem : new FormControl('',[Validators.required]),
+  })
 
-  constructor(private baseRepository: BaseRepository) {
-    this.calculatorForm = new FormGroup({
-      firstValue: new FormControl('', [Validators.required]),
-      secondValue: new FormControl('', [Validators.required]),
-      resultData: new FormControl('', [Validators.required]),
-    })
+  this.newItem= new FormGroup({
+    newItem:new FormControl('',[Validators.required])
 
-    this.itemForm = new FormGroup({
-      addItem: new FormControl('', [Validators.required]),
-    })
-
-    this.addForm = new FormGroup({
-      addname: new FormControl('', [Validators.required])
-
-
-    })
+  })
 
   }
 
@@ -57,13 +56,13 @@ export class CalculatorComponent {
     this.firstdata = this.calculatorForm.value.firstValue;
     this.secondData = this.calculatorForm.value.secondValue;
 
-    if (checkType === 'addition') {
+    if(checkType === 'addition'){
       this.finalResult = this.firstdata + this.secondData;
-    } else if (checkType === 'minus') {
+    }else if(checkType === 'minus'){
       this.finalResult = this.firstdata - this.secondData;
-    } else if (checkType === 'multiply') {
+    }else if(checkType === 'multiply'){
       this.finalResult = this.firstdata * this.secondData;
-    } else {
+    }else{
       this.finalResult = this.firstdata / this.secondData;
     }
     this.calculatorForm.patchValue({
@@ -71,23 +70,20 @@ export class CalculatorComponent {
     });
 
   }
+  addsave(){
+    this.addValue=this.newItem.value.newItem
 
-  saveItem() {
+  }
+  
+
+  saveItem(){
     this.itemValue = this.itemForm.value.addItem,
-      this.students.push(this.itemValue);
+    this.students.push(this.itemValue);
     console.log(this.students)
     this.clearItemForm()
   }
-  DeletStudent(indexdata: string) {
-    debugger
-    const index = this.students.indexOf(indexdata)
-    if (index !== -1) {
-      this.students.splice(index, 1)
-    }
 
-  }
-
-  clearInputsCalculator() {
+  clearInputsCalculator(){
     this.calculatorForm.reset();
     this.firstdata = 0;
     this.secondData = 0;
@@ -100,3 +96,4 @@ export class CalculatorComponent {
   }
 
 }
+
