@@ -114,7 +114,7 @@ body {
 .nav-item a {
     font-weight: bold;
     color:  #8e24aa;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .nav-item a:hover {
