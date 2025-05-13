@@ -24,6 +24,7 @@ import { AddproductsComponent } from './components/addproducts/addproducts.compo
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { GuessGameComponent } from './components/guess-game/guess-game.component';
 
 
 
@@ -53,6 +54,7 @@ export const routes: Routes = [
     {path: 'notes', component: NotesComponent},
     {path: 'addproducts', component: AddproductsComponent},
     {path: 'addstudent', component: AddstudentComponent},
+    {path: 'guess-game', component: GuessGameComponent},
    
     {path: 'calculator', component: CalculatorComponent}
  
