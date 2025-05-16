@@ -1,46 +1,65 @@
 <section class="container-fluid">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="add-item">
                 <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
                     <h1>Student</h1>
                     <div class="row mt-5">
-                        <input class="col-5" formControlName="addItem" placeholder="Enter item name" type="text"/>
+                        <input class="col-5" formControlName="addItem" placeholder="Enter Student name" type="text" />
                         <button class="col-3" type="submit">Add Item</button>
                     </div>
                 </form>
-                <div  *ngIf="students.length>0; else noData"class="mt-5">
+                <div *ngIf="students.length>0; else noData" class="mt-5">
                     <h3>Student</h3>
-                    <ul  class="mt-3">
-                        <li *ngFor="let item of students">{{item}} <button class="ml-4" (click)="deleteData(item)">X</button> </li>
+                    <ul class="mt-3">
+                        <li *ngFor="let item of students">{{item}} <button class="ml-4"
+                                (click)="deleteData(item)">X</button> </li>
                     </ul>
                 </div>
             </div>
-                <ng-template #noData>
+            <ng-template #noData>
                 <p class="mt-5">No student found</p>
             </ng-template>
-                
+
         </div>
         <div class="calculator-container">
-        <div class="col-6">
-            <h1>Calculator</h1>
-            <div class="row mt-5">
-                <form [formGroup]="calculatorForm">
-                    <div class="row gap-4">
-                        <input class="col-3" formControlName="firstValue" type="number" placeholder="Enter first value"/>
-                        <input class="col-3" formControlName="secondValue" type="number" placeholder="Enter second value"/>
-                    </div>
-                    <div class="gap-5 mt-4">Result<input class="border" formControlName="resultData" placeholder="result"/><button type="button" (click)="clearInputsCalculator()">Clear</button>
-                    </div>
-                    <div class="row mt-5">
-                        <button class="col-2"  type="submit" (click)="calculate('addition')">+</button>
-                        <button class="col-2" type="submit" (click)="calculate('minus')">-</button>
-                        <button class="col-2" type="submit" (click)="calculate('multiply')">*</button>
-                        <button class="col-2" type="submit" (click)="calculate('divide')">/</button>
-                    </div>
-                </form>
+            <div class="col-6">
+                <h1>Calculator</h1>
+                <div class="row mt-5">
+                    <form [formGroup]="calculatorForm">
+                        <div class="row gap-4">
+                            <input class="col-3" formControlName="firstValue" type="number"
+                                placeholder="Enter first value" />
+                            <input class="col-3" formControlName="secondValue" type="number"
+                                placeholder="Enter second value" />
+                        </div>
+                        <div class="gap-5 mt-4">Result<input class="border" formControlName="resultData"
+                                placeholder="result" /><button type="button"
+                                (click)="clearInputsCalculator()">Clear</button>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="col-2" type="submit" (click)="calculate('addition')">+</button>
+                            <button class="col-2" type="submit" (click)="calculate('minus')">-</button>
+                            <button class="col-2" type="submit" (click)="calculate('multiply')">*</button>
+                            <button class="col-2" type="submit" (click)="calculate('divide')">/</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
         </div>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-md-6">
+                <form >
+                    <div><label>English</label><input type="text"><br></div>
+                    <label>Punjabi</label><input type="text"><br>
+                    <label>Hindi</label><input type="text"><br>
+                </form>
+            </div>
+            <div class="col-md-6">Column</div>
+            
+        </div>
+
+
     </div>
-    </div>
+
 </section>
