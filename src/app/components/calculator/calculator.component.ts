@@ -120,12 +120,8 @@ export class CalculatorComponent {
   }
 
   getmarks() {
-    this.firstResultdata = this.resultForm.value.firstMarks;
-    this.secondResultdata = this.resultForm.value.secondMarks;
-    this.thirdResultdata = this.resultForm.value.thirdMarks;
-    {
 
-      this.studentGetmarks = this.firstResultdata + this.secondResultdata + this.thirdResultdata;
+      this.studentGetmarks = this.resultForm.value.firstMarks +this.resultForm.value.secondMarks + this.resultForm.value.thirdMarks;
       this.percentage = (this.studentGetmarks / 300) * 100;
 
       if (this.percentage >= 99) {
@@ -149,7 +145,6 @@ export class CalculatorComponent {
     this.resultForm.patchValue({
       finalMarks: this.studentGetmarks,
     });
-  }
 }
     
  
