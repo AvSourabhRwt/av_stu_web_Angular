@@ -63,7 +63,10 @@
                         <input type="number" formControlName="thirdMarks" placeholder="Enter Marks">
                     </div>
                     <div class="gap-5 mt-4">Result<input class="border" formControlName="finalMarks"
-                            placeholder="result" /></div>
+                            placeholder="result">
+                    </div>
+                    <p><b> Percentage:{{ percentage }}</b>%</p>
+                    <p><b>Grade:</b> {{ grade }}</p>
                     <button type="submit" (click)="getmarks()">Result</button>
 
                 </form>

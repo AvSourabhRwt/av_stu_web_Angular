@@ -25,12 +25,14 @@ export class CalculatorComponent {
   secondData = 0;
   studentss: any = [];
   name: any;
-  finalMarks = 0;
   firstResultdata = 0;
   secondResultdata = 0;
   thirdResultdata = 0;
-  studentGetmarks=0;
-  
+  studentGetmarks = 0;
+  totalMarks = 300;
+  percentage = 0;
+  grade: string = ''
+
   constructor(private baseRepository: BaseRepository) {
     this.resultForm = new FormGroup({
       firstMarks: new FormControl('', [Validators.required]),
@@ -39,7 +41,7 @@ export class CalculatorComponent {
       finalMarks: new FormControl('', [Validators.required]),
 
     })
-    
+
 
 
 
@@ -117,16 +119,39 @@ export class CalculatorComponent {
     this.itemValue = '';
   }
 
-  getmarks(){
-    this.firstResultdata= this.resultForm.value.firstMarks;
-    this.secondResultdata= this.resultForm.value.secondMarks;
-    this.thirdResultdata= this.resultForm.value.thirdMarks;
-{
+  getmarks() {
+    this.firstResultdata = this.resultForm.value.firstMarks;
+    this.secondResultdata = this.resultForm.value.secondMarks;
+    this.thirdResultdata = this.resultForm.value.thirdMarks;
+    {
 
-  this.studentGetmarks = this.firstResultdata + this.secondResultdata + this.thirdResultdata;
-}
-  this.resultForm.patchValue({
-    finalMarks: this.studentGetmarks,
+      this.studentGetmarks = this.firstResultdata + this.secondResultdata + this.thirdResultdata;
+      this.percentage = (this.studentGetmarks / 300) * 100;
+
+      if (this.percentage >= 99) {
+        this.grade = 'O';
+      }
+      else if (this.percentage >= 90) {
+        this.grade = 'A+ ghr diaan ne O grade waale naal commparisson krna ae';
+      } else if (this.percentage >= 80) {
+        this.grade = 'A, Topper naal baithan da faida hoo gia ';
+      } else if (this.percentage >= 70) {
+        this.grade = 'B+, Ine marks kiwe aa gye mere';
+      }else if (this.percentage >= 60) {
+        this.grade = 'B, bina pdee paas ho gia';
+      }else if (this.percentage >= 45) {
+        this.grade = 'C, D aaun toh taan changa hi aa';
+      }else if (this.percentage >= 33) {
+        this.grade = 'D, Aukha hi paas hoiya';
+      }else {
+        this.grade = 'F, Fitay muh nakal Mar ke v tangia gia';
+      }
+    this.resultForm.patchValue({
+      finalMarks: this.studentGetmarks,
     });
   }
+}
+    
+ 
+
 }
