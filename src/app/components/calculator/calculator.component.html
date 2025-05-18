@@ -48,15 +48,26 @@
             </div>
         </div>
         <div class="row justify-content-center align-items-center g-2">
-            <div class="col-md-6">
-                <form >
-                    <div><label>English</label><input type="text"><br></div>
-                    <label>Punjabi</label><input type="text"><br>
-                    <label>Hindi</label><input type="text"><br>
+            <div class="col-md-12">
+                <form [formGroup]="resultForm">
+                    <div class="input-group">
+                        <span class="input-group-text">English</span>
+                        <input type="number" formControlName="firstMarks" placeholder="Enter Marks">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Hindi</span>
+                        <input type="number" formControlName="secondMarks" placeholder="Enter Marks">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Punjabi</span>
+                        <input type="number" formControlName="thirdMarks" placeholder="Enter Marks">
+                    </div>
+                    <div class="gap-5 mt-4">Result<input class="border" formControlName="finalMarks"
+                            placeholder="result" /></div>
+                    <button type="submit" (click)="getmarks()">Result</button>
+
                 </form>
             </div>
-            <div class="col-md-6">Column</div>
-            
         </div>
 
 

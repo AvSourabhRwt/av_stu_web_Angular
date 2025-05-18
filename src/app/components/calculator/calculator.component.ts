@@ -12,8 +12,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
+  [x: string]: any;
   itemForm!: FormGroup;
   calculatorForm!: FormGroup;
+  resultForm!: FormGroup;
   addForm!: FormGroup;
   finalResult = 0;
   itemValue: string = '';
@@ -22,11 +24,27 @@ export class CalculatorComponent {
   firstdata = 0;
   secondData = 0;
   studentss: any = [];
-  name:any;
-
-
-
+  name: any;
+  finalMarks = 0;
+  firstResultdata = 0;
+  secondResultdata = 0;
+  thirdResultdata = 0;
+  studentGetmarks=0;
+  
   constructor(private baseRepository: BaseRepository) {
+    this.resultForm = new FormGroup({
+      firstMarks: new FormControl('', [Validators.required]),
+      secondMarks: new FormControl('', [Validators.required]),
+      thirdMarks: new FormControl('', [Validators.required]),
+      finalMarks: new FormControl('', [Validators.required]),
+
+    })
+    
+
+
+
+
+
     this.calculatorForm = new FormGroup({
       firstValue: new FormControl('', [Validators.required]),
       secondValue: new FormControl('', [Validators.required]),
@@ -45,15 +63,15 @@ export class CalculatorComponent {
 
   }
 
-  deleteData(data:string){
+  deleteData(data: string) {
     const index = this.students.indexOf(data);
     if (index !== -1) {
-      this.students.splice(index, 1); 
+      this.students.splice(index, 1);
     }
     console.log(data)
   }
 
-  calculate(checkType:string){
+  calculate(checkType: string) {
     this.firstdata = this.calculatorForm.value.firstValue;
     this.secondData = this.calculatorForm.value.secondValue;
 
@@ -94,9 +112,21 @@ export class CalculatorComponent {
     this.finalResult = 0;
   }
 
-  clearItemForm(){
+  clearItemForm() {
     this.itemForm.reset();
     this.itemValue = '';
   }
 
+  getmarks(){
+    this.firstResultdata= this.resultForm.value.firstMarks;
+    this.secondResultdata= this.resultForm.value.secondMarks;
+    this.thirdResultdata= this.resultForm.value.thirdMarks;
+{
+
+  this.studentGetmarks = this.firstResultdata + this.secondResultdata + this.thirdResultdata;
+}
+  this.resultForm.patchValue({
+    finalMarks: this.studentGetmarks,
+    });
+  }
 }
